@@ -1,0 +1,32 @@
+<!-- index.html -->
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="card text-center rounded-0">
+  <div class="card-body">
+    <h1 class="mb-3 pb-3 border-bottom border-dark">
+      <strong>Welcome, {{ request.user.first_name }} {{ request.user.last_name }}!</strong>
+    </h1>
+    <p class="pb-3">
+      Welcome Duscians, to the RTPM-DSHS Supreme Secondary Learner Government Election website, where you can exercise your right to vote and shape the future of your student government!
+    </p>
+    <hr />
+    <div class="row justify-content-center">
+      <div class="col-xl-4 col-lg-4 col-md-6 col-sm-8 col-xs-12">
+        <a class="btn btn-info btn-block rounded-pill btn-lg vote-btn" href="{% url 'polls:index' %}">
+          <strong>Vote</strong>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  .vote-btn {
+    background-color: rgba(204, 0, 102, 0.8); /* translucent background */
+  }
+  .vote-btn strong {
+    font-weight: bold; /* bold text */
+  }
+</style>
+{% endblock %}

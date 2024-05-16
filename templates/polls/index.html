@@ -1,0 +1,41 @@
+{% extends 'base.html' %} 
+{% block content %}
+<style>
+    .border-pink {
+        border-color: #FF69B4; /* Pink color */
+    }
+
+    .btn-pink {
+        background-color: #FF69B4; /* Pink color */
+        border-color: #FF69B4; /* Pink color */
+    }
+
+    .btn-vote-now.btn-info {
+        background-color: #cd3567;
+        border-color: #FF69B4;
+    }
+</style>
+
+<div class="bg-white rounded-0 py-3 px-4 mb-3">
+    <h1 class="text-center mb-0">Positions</h1>
+</div>
+<div class="row row-cols-1 row-cols-xl-4 row-cols-lg-3 row-cols-md-2 row-cols-xsm-1 row-cols-xsm-1">
+    {% if latest_question_list %}
+        {% for question in latest_question_list %}
+            <div class="col">
+                <div class="card rounded-0 shadow border-top-0 border-bottom-0 border-right-0 border-pink mb-3" style="border-left-width: 3px;">
+                    <div class="card-body">
+                        <p class="lead">{{ question.question_text }}</p>
+                        <div class="text-right">
+                            <a href="{% url 'polls:detail' question.id %}" class="btn btn-info btn-sm rounded-0 btn-vote-now">Vote Now</a>
+                            <a href="{% url 'polls:results' question.id %}" class="btn btn-pink btn-sm rounded-0">Results</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+    {% else %}
+        <p>No polls available</p>
+    {% endif %}
+{% endblock %}
