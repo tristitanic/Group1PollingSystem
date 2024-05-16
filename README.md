@@ -30,5 +30,3 @@ python manage.py runserver
 3. (Optional): Change Profile Picture
 
 4. Vote
-
-(Does not require installation since it is a website.)
