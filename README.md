@@ -1,4 +1,12 @@
-## RTPM DSHS Polling System
+# RTPM DSHS Polling System
+
+# Members
+- Aling
+- Dayhop
+- Hachero
+- Partosa
+- Patula
+- Villareal
 
 ### Technologies
 - Python
@@ -30,3 +38,4 @@ python manage.py runserver
 3. (Optional): Change Profile Picture
 
 4. Vote
+
